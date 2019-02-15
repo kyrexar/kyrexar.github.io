@@ -1,0 +1,81 @@
+* {
+
+font-family:sans-serif;
+	
+}
+
+body {
+	background-color:#99CCFF;
+	}
+
+table {
+	background-color:white;
+	border:0.125em solid black; /* 2px */
+	border-radius:0.315em; /* 5px */
+	margin:auto;
+	display: inline-table;
+	position: relative;
+	margin-left:6.3em; /* 100px */
+	margin-top:1.25em; /* 20px */
+	text-align:center;
+}
+
+p {
+	text-align:center;
+	font-style:italic;
+	}
+
+th {
+	border:0.125 solid black; /* 2px */
+	background-color:black;
+	color:white;
+	text-align:center;
+	}
+
+a {
+	text-decoration:none;
+	color:black;
+	}
+
+#header {
+	width:100%;
+	}
+
+.nombre {
+	font-weight:bold;
+	width:7.55em; /* 120px */
+	border:0.189em solid grey; /* 3px */
+	border-radius:0.315em; /* 5px */
+	background-color:darkgrey;
+	Transition: border 1s, background-color 1s;
+	-webkit-Transition: border 1s, background-color 1s;
+	}
+
+.nombre:hover {
+	border:0.189em solid red; /* 3px */
+	background-color:darkred;
+	}
+
+.tipo {
+	width:9.45em; /* 150px */
+	}
+
+.gratis {
+	width:3.15em; /* 50px */
+	border-radius:100%;
+	background-color:darkblue;
+	color:white;
+	}
+
+.libre {
+	width:3.15em; /* 50px */
+	border-radius:100%;
+	background-color:darkgreen;
+	color:white;
+	}
+
+.os {
+	width:6.5em; /* 100px */
+	}
+
+/* 100px == 6.3em */</style>
