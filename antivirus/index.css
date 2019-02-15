@@ -14,9 +14,11 @@ table {
 	border-radius:0.315em; /* 5px */
 	margin:auto;
 	display: inline-table;
-	position: relative;
-	margin-left:6.3em; /* 100px */
 	margin-top:1.25em; /* 20px */
+	
+	margin-left:25%;
+	width:50%;
+	margin-right:25%;
 	text-align:center;
 }
 
@@ -43,7 +45,7 @@ a {
 
 .nombre {
 	font-weight:bold;
-	width:7.55em; /* 120px */
+	width:15em;
 	border:0.189em solid grey; /* 3px */
 	border-radius:0.315em; /* 5px */
 	background-color:darkgrey;
@@ -61,14 +63,14 @@ a {
 	}
 
 .gratis {
-	width:3.15em; /* 50px */
+	width:6em;
 	border-radius:100%;
 	background-color:darkblue;
 	color:white;
 	}
 
 .libre {
-	width:3.15em; /* 50px */
+	width:6em;
 	border-radius:100%;
 	background-color:darkgreen;
 	color:white;
