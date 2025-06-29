@@ -1,280 +1,101 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-	<style>
-	table, th, td {
-		border: 1px solid black;
-		text-align: center;
-	}
-	
-	.bloque-tabla {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		width: 50%;
-	}
-	</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buscador CEX</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    label, select {
+      margin: 10px 0;
+      display: block;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-	<div class='bloque-tabla'>
-		<table>
-			<tr>
-				<th>
-					TORRENT
-				</th>
-				<th>
-					VALENCIA BONAIRE
-				</th>
-				<th>
-					VALENCIA FERNANDO
-				</th>
-				<th>
-					VALENCIA RUZAFA
-				</th>
-				<th>
-					VALENCIA BENIMACLET
-				</th>
-			</tr>
-			<tr>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1093&stores=Torrent+Avinguda">GBA</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1093&stores=Valencia+Factory+Bonaire">GBA</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1093&stores=Valencia+Fernando">GBA</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1093&stores=Valencia+Ruzafa">GBA</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1093&stores=Valencia+Benimaclet">GBA</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=834&stores=Torrent+Avinguda">DS</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=834&stores=Valencia+Factory+Bonaire">DS</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=834&stores=Valencia+Fernando">DS</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=834&stores=Valencia+Ruzafa">DS</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=834&stores=Valencia+Benimaclet">DS</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=977&stores=Torrent+Avinguda">3DS</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=977&stores=Valencia+Factory+Bonaire">3DS</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=977&stores=Valencia+Fernando">3DS</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=977&stores=Valencia+Ruzafa">3DS</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=977&stores=Valencia+Benimaclet">3DS</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1027&stores=Torrent+Avinguda">SNES</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1027&stores=Valencia+Factory+Bonaire">SNES</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1027&stores=Valencia+Fernando">SNES</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1027&stores=Valencia+Ruzafa">SNES</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1027&stores=Valencia+Benimaclet">SNES</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1019&stores=Torrent+Avinguda">N64</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1019&stores=Valencia+Factory+Bonaire">N64</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1019&stores=Valencia+Fernando">N64</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1019&stores=Valencia+Ruzafa">N64</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1019&stores=Valencia+Benimaclet">N64</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=837&stores=Torrent+Avinguda">NGC</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=837&stores=Valencia+Factory+Bonaire">NGC</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=837&stores=Valencia+Fernando">NGC</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=837&stores=Valencia+Ruzafa">NGC</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=837&stores=Valencia+Benimaclet">NGC</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=831&stores=Torrent+Avinguda">Wii</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=831&stores=Valencia+Factory+Bonaire">Wii</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=831&stores=Valencia+Fernando">Wii</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=831&stores=Valencia+Ruzafa">Wii</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=831&stores=Valencia+Benimaclet">Wii</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=996&stores=Torrent+Avinguda">Wii U</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=996&stores=Valencia+Factory+Bonaire">Wii U</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=996&stores=Valencia+Fernando">Wii U</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=996&stores=Valencia+Ruzafa">Wii U</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=996&stores=Valencia+Benimaclet">Wii U</a>
-				</td>
-			</tr>
-		</table>
-	</div>
-	<div class='bloque-tabla'>
-		<table>
-			<tr>
-				<th>
-					ALICANTE
-				</th>
-				<th>
-					ELCHE
-				</th>
-				<th>
-					MURCIA
-				</th>
-			</tr>
-			<tr>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1093&stores=Alicante+Alfonso+X+El+Sabio">GBA</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1093&stores=Elche+Glorieta">GBA</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1093&stores=Murcia+Primo+de+Rivera">GBA</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=834&stores=Alicante+Alfonso+X+El+Sabio">DS</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=834&stores=Elche+Glorieta">DS</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=834&stores=Murcia+Primo+de+Rivera">DS</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=977&stores=Alicante+Alfonso+X+El+Sabio">3DS</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=977&stores=Elche+Glorieta">3DS</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=977&stores=Murcia+Primo+de+Rivera">3DS</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1027&stores=Alicante+Alfonso+X+El+Sabio">SNES</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1027&stores=Elche+Glorieta">SNES</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1027&stores=Murcia+Primo+de+Rivera">SNES</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1019&stores=Alicante+Alfonso+X+El+Sabio">N64</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1019&stores=Elche+Glorieta">N64</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=1019&stores=Murcia+Primo+de+Rivera">N64</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=837&stores=Alicante+Alfonso+X+El+Sabio">NGC</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=837&stores=Elche+Glorieta">NGC</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=837&stores=Murcia+Primo+de+Rivera">NGC</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=831&stores=Alicante+Alfonso+X+El+Sabio">Wii</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=831&stores=Elche+Glorieta">Wii</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=831&stores=Murcia+Primo+de+Rivera">Wii</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=996&stores=Alicante+Alfonso+X+El+Sabio">Wii U</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=996&stores=Elche+Glorieta">Wii U</a>
-				</td>
-				<td>
-					<a href="https://es.webuy.com/search/?categoryIds=996&stores=Murcia+Primo+de+Rivera">Wii U</a>
-				</td>
-			</tr>
-		</table>
-	</div>
+  <h1>Generador de Enlace CEX</h1>
+
+  <label for="categoria">Categoría:</label>
+  <select id="categoria"></select>
+
+  <label for="tienda">Tienda:</label>
+  <select id="tienda"></select>
+
+  <div id="enlaceContainer">
+    <a id="enlace" href="#" target="_blank">Enlace generado aparecerá aquí</a>
+  </div>
+
+  <div style="margin-top: 40px;">
+    <a id="miBotonFinal" href="old.html">
+      <button type="button">Vieja versión</button>
+    </a>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const categorias = [
+        { id: 1093, nombre: "Game Boy Advance" },
+        { id: 834, nombre: "Nintendo DS" },
+        { id: 977, nombre: "Nintendo 3DS" },
+        { id: 1027, nombre: "Super Nintendo" },
+        { id: 1019, nombre: "Nintendo 64" },
+        { id: 837, nombre: "Nintendo GameCube" },
+        { id: 831, nombre: "Nintendo Wii" },
+        { id: 996, nombre: "Nintendo Wii U" },
+      ];
+
+      const tiendas = [
+        { id: "Torrent+Avinguda", nombre: "Torrent" },
+        { id: "Valencia+Factory+Bonaire", nombre: "Valencia Bonaire" },
+        { id: "Valencia+Fernando", nombre: "Valencia Fernando" },
+        { id: "Valencia+Ruzafa", nombre: "Valencia Ruzafa" },
+        { id: "Valencia+Benimaclet", nombre: "Valencia Benimaclet" },
+        { id: "Alicante+Alfonso+X+El+Sabio", nombre: "Alicante" },
+        { id: "Elche+Glorieta", nombre: "Elche" },
+        { id: "Murcia+Primo+de+Rivera", nombre: "Murcia" },
+        { id: "Alcorcón+TresAguas", nombre: "Alcorcón" },
+        { id: "Móstoles+Plaza+Pradillo", nombre: "Móstoles" },
+        { id: "Leganés+Juan+Muñoz", nombre: "Leganés" },
+        { id: "Getafe+Madrid~Getafe", nombre: "Móstoles" },
+      ];
+
+      const categoriaSelect = document.getElementById('categoria');
+      const tiendaSelect = document.getElementById('tienda');
+      const enlace = document.getElementById('enlace');
+
+      function llenarDropdown(select, lista) {
+        lista.forEach(item => {
+          const option = document.createElement('option');
+          option.value = item.id;
+          option.textContent = item.nombre;
+          select.appendChild(option);
+        });
+      }
+
+      function actualizarEnlace() {
+        const categoria = categoriaSelect.value;
+        const tienda = tiendaSelect.value;
+        const url = `https://es.webuy.com/search/?categoryIds=${categoria}&stores=${tienda}`;
+        enlace.href = url;
+        enlace.textContent = url;
+      }
+
+      categoriaSelect.addEventListener('change', actualizarEnlace);
+      tiendaSelect.addEventListener('change', actualizarEnlace);
+
+      // Inicializar dropdowns y generar primer enlace
+      llenarDropdown(categoriaSelect, categorias);
+      llenarDropdown(tiendaSelect, tiendas);
+      actualizarEnlace();
+    });
+  </script>
 </body>
 </html>
