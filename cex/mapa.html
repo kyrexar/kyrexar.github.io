@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CEX</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 700px;
+    margin: auto;
+    position: relative;
+  }
+  label, select {
+    margin: 10px 0 5px 0;
+    display: block;
+  }
+  a {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  #mapaContainer {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin-top: 20px;
+  }
+  #mapaEspaña {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  svg#overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* para que no bloquee el mapa */
+  }
+  .punto {
+    fill: red;
+    cursor: pointer;
+    transition: fill 0.3s;
+  }
+  .punto:hover {
+    fill: orange;
+  }
+  #tiendaSeleccionada {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  #botonFinal {
+    margin-top: 40px;
+  }
+  .filtros {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Para que en pantallas pequeñas se ajusten */
+  }
+  .filtros label {
+    white-space: nowrap;
+  }
+
+</style>
+</head>
+<body>
+
+<h1>CEX</h1>
+
+<div class="filtros">
+  <label for="categoria">Categoría:</label>
+  <select id="categoria"></select>
+
+  <label for="tienda">Tienda:</label>
+  <select id="tienda"></select>
+</div>
+
+
+<div id="enlaceContainer">
+  <a id="enlace" href="#" target="_blank">Enlace generado aparecerá aquí</a>
+</div>
+
+<div id="mapaContainer">
+  <!-- SVG real de España -->
+  <object id="mapaEspaña" type="image/svg+xml" data="https://upload.wikimedia.org/wikipedia/commons/2/23/Blank_Spain_Map_%28Provinces%29.svg"></object>
+
+  <!-- SVG overlay con puntos -->
+  <svg id="overlay" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" aria-label="Mapa de España con tiendas" role="img">
+    <!-- Los puntos se añadirán con JS -->
+  </svg>
+</div>
+
+<script>
+  const categorias = [
+    { id: 1093, nombre: "Game Boy Advance" },
+    { id: 834, nombre: "Nintendo DS" },
+    { id: 977, nombre: "Nintendo 3DS" },
+    { id: 1027, nombre: "Super Nintendo" },
+    { id: 1019, nombre: "Nintendo 64" },
+    { id: 837, nombre: "Nintendo GameCube" },
+    { id: 831, nombre: "Nintendo Wii" },
+    { id: 996, nombre: "Nintendo Wii U" },
+    { id: 1088, nombre: "PlayStation 1" },
+    { id: 824, nombre: "PlayStation 2" },
+    { id: 821, nombre: "PlayStation 3" },
+    { id: 818, nombre: "Xbox" },
+    { id: 827, nombre: "Xbox 360" },
+    { id: 1002, nombre: "Xbox One" },
+    { id: 1082, nombre: "Xbox Smart Delivery" },
+    { id: 1083, nombre: "Xbox Series" },
+  ];
+
+  const tiendas = [
+    { id: "Torrent+Avinguda", nombre: "Torrent", cx: 530, cy: 175 },
+    { id: "Valencia+Factory+Bonaire", nombre: "Valencia Bonaire", cx: 530, cy: 160 },
+    { id: "Valencia+Fernando", nombre: "Valencia Fernando", cx: 545, cy: 160 },
+    { id: "Valencia+Ruzafa", nombre: "Valencia Ruzafa", cx: 560, cy: 160 },
+    { id: "Valencia+Benimaclet", nombre: "Valencia Benimaclet", cx: 560, cy: 145 },
+    { id: "Alicante+Alfonso+X+El+Sabio", nombre: "Alicante", cx: 560, cy: 200 },
+    { id: "Elche+Glorieta", nombre: "Elche", cx: 540, cy: 220 },
+    { id: "Murcia+Primo+de+Rivera", nombre: "Murcia", cx: 520, cy: 240 },
+
+    { id: "Alcorcón+TresAguas", nombre: "Alcorcón", cx: 400, cy: 90 },
+    { id: "Móstoles+Plaza+Pradillo", nombre: "Móstoles", cx: 385, cy: 100 },
+    { id: "Getafe+Madrid~Getafe", nombre: "Getafe", cx: 415, cy: 100 },
+    { id: "Leganés+Juan+Muñoz", nombre: "Leganés", cx: 430, cy: 115 },
+    { id: "Madrid+Atocha~Madrid+Bravo+Murillo~Madrid+Alcalá~Madrid+Usera~Madrid+La+Laguna", nombre: "Madrid", cx: 415, cy: 75 },
+
+    { id: "Lleida+Blondel", nombre: "Lleida", cx: 600, cy: 30 },
+    { id: "Girona+Espai", nombre: "Girona", cx: 680, cy: 5 },
+    { id: "Barcelona+Sants~Barcelona+Fabra+i+Puig~Barcelona+Passeig+Sant+Joan~Barcelona+Gran+de+Gràcia~Barcelona+Sant+Antoni", nombre: "Barcelona", cx: 650, cy: 30 },
+
+    { id: "Zaragoza+Carmen", nombre: "Zaragoza", cx: 520, cy: 30 },
+
+    { id: "Talavera+Trinidad", nombre: "Talavera", cx: 370, cy: 120 },
+    { id: "Salamanca+Mirat", nombre: "Salamanca", cx: 330, cy: 70 },
+    { id: "Valladolid+Teresa+Gil", nombre: "Valladolid", cx: 370, cy: 30 },
+    { id: "León+Espacio~León+Ordoño", nombre: "León", cx: 340, cy: -20 },
+
+    { id: "Bilbao+Ballonti~Bilbao+de+la+Cruz~Bilbao+Areilza", nombre: "Bilbao", cx: 450, cy: -60 },
+    { id: "Vitoria+Independencia", nombre: "Vitoria", cx: 460, cy: -30 },
+    { id: "Santander+San+Fernando", nombre: "Santander", cx: 400, cy: -60 },
+    { id: "Gijón+Uría", nombre: "Gijón", cx: 340, cy: -70 },
+    { id: "A+Coruña+Juan+Florez", nombre: "A Coruña", cx: 240, cy: -70 },
+    { id: "Vigo+Camelias", nombre: "Vigo", cx: 210, cy: -30 },
+    
+    { id: "Córdoba+Jesús+y+María", nombre: "Córdoba", cx: 380, cy: 240 },
+    { id: "Granada+San+Antón", nombre: "Granada", cx: 430, cy: 265 },
+    { id: "Málaga+de+la+Mota", nombre: "Málaga", cx: 380, cy: 290 },
+    { id: "Algeciras+Puerta+Europa", nombre: "Algeciras", cx: 330, cy: 330 },
+    { id: "Jerez+Larga~Jerez+Santa+María", nombre: "Jerez", cx: 300, cy: 290 },
+    { id: "Sevilla+Santa+Justa~Sevilla+Imagen~Sevilla+Asunción~Sevilla+Nervión", nombre: "Sevilla", cx: 310, cy: 250 },
+    { id: "Huelva+Berdigón", nombre: "Huelva", cx: 260, cy: 260 },
+  ];
+
+  const categoriaSelect = document.getElementById('categoria');
+  const tiendaSelect = document.getElementById('tienda');
+  const enlace = document.getElementById('enlace');
+  const tiendaSeleccionada = document.getElementById('tiendaSeleccionada');
+  const botonFinal = document.getElementById('miBotonFinal');
+  const overlay = document.getElementById('overlay');
+
+  function llenarDropdown(select, lista) {
+    lista.forEach(item => {
+      const option = document.createElement('option');
+      option.value = item.id;
+      option.textContent = item.nombre;
+      select.appendChild(option);
+    });
+  }
+
+  function actualizarEnlace() {
+    const categoria = categoriaSelect.value;
+    const tienda = tiendaSelect.value;
+    const url = `https://es.webuy.com/search/?categoryIds=${categoria}&stores=${tienda}`;
+    enlace.href = url;
+    enlace.textContent = url;
+    botonFinal.href = url;
+
+    const tiendaObj = tiendas.find(t => t.id === tienda);
+    tiendaSeleccionada.textContent = tiendaObj ? `Tienda seleccionada: ${tiendaObj.nombre}` : 'Tienda seleccionada: ninguna';
+  }
+
+  function agregarPuntosMapa() {
+    tiendas.forEach(tienda => {
+      const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      circle.setAttribute("cx", tienda.cx);
+      circle.setAttribute("cy", tienda.cy);
+      circle.setAttribute("r", 8);
+      circle.setAttribute("class", "punto");
+      circle.style.pointerEvents = 'auto';
+
+      // Tooltip SVG con <title>
+      const title = document.createElementNS("http://www.w3.org/2000/svg", "title");
+      title.textContent = tienda.nombre;
+      circle.appendChild(title);
+
+      circle.addEventListener('click', () => {
+        tiendaSelect.value = tienda.id;
+        actualizarEnlace();
+      });
+
+      overlay.appendChild(circle);
+    });
+  }
+
+  categoriaSelect.addEventListener('change', actualizarEnlace);
+  tiendaSelect.addEventListener('change', actualizarEnlace);
+
+  llenarDropdown(categoriaSelect, categorias);
+  llenarDropdown(tiendaSelect, tiendas);
+  agregarPuntosMapa();
+  actualizarEnlace();
+</script>
+
+</body>
+</html>
