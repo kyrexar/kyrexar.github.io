@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CEX</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 30px;
     }
-    label, select {
+
+    label,
+    select {
       margin: 10px 0;
       display: block;
     }
+
     a {
       display: inline-block;
       margin-top: 20px;
@@ -20,6 +24,7 @@
     }
   </style>
 </head>
+
 <body>
   <h1>CEX</h1>
 
@@ -42,14 +47,23 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const categorias = [
+        { id: 1141, nombre: "Game Boy" },
+        { id: 1139, nombre: "Game Boy Color" },
         { id: 1093, nombre: "Game Boy Advance" },
         { id: 834, nombre: "Nintendo DS" },
         { id: 977, nombre: "Nintendo 3DS" },
+        { id: 1155, nombre: "Nintendo Entertainment System" },
         { id: 1027, nombre: "Super Nintendo" },
         { id: 1019, nombre: "Nintendo 64" },
         { id: 837, nombre: "Nintendo GameCube" },
         { id: 831, nombre: "Nintendo Wii" },
         { id: 996, nombre: "Nintendo Wii U" },
+        { id: 1147, nombre: "Sega Master System" },
+        { id: 1151, nombre: "Sega Mega Drive" },
+        { id: 1152, nombre: "Sega Mega-CD" },
+        { id: 1148, nombre: "Sega 32X" },
+        { id: 1158, nombre: "Sega Saturn" },
+        { id: 1136, nombre: "Sega Dreamcast" },
         { id: 1088, nombre: "PlayStation 1" },
         { id: 824, nombre: "PlayStation 2" },
         { id: 821, nombre: "PlayStation 3" },
@@ -62,7 +76,7 @@
 
       const tiendas = [
         { id: "Torrent+Avinguda", nombre: "Torrent" },
-        { id: "Valencia+Factory+Bonaire", nombre: "Valencia Bonaire" },
+        { id: "Valencia+Nuevo+Centro", nombre: "Valencia Nuevo Centro" },
         { id: "Valencia+Fernando", nombre: "Valencia Fernando" },
         { id: "Valencia+Ruzafa", nombre: "Valencia Ruzafa" },
         { id: "Valencia+Benimaclet", nombre: "Valencia Benimaclet" },
@@ -106,4 +120,5 @@
     });
   </script>
 </body>
+
 </html>
